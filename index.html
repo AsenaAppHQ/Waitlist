@@ -1,1 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asena — Wellness that moves with you</title>
+<link rel="icon" type="image/png" href="/logo.png" />
+<meta name="description" content="Asena is a cycle-aware wellness app built for every stage of a woman's life. Join the waitlist." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2D2438;
+    --ink-soft: #6B6270;
+    --bg: #FAF8F6;
+    --bg-deep: #241C2E;
+    --card: #FFFFFF;
+    --sage: #8FA382;
+    --sage-soft: #E4EBDF;
+    --rose: #D88C9A;
+    --rose-soft: #F7E4E7;
+    --line: #EAE5E9;
+    --cream: #F3EDE6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .display { font-family: 'Fraunces', serif; }
+  a { color: inherit; }
 
+  /* ---------- Hero ---------- */
+  .hero {
+    background: radial-gradient(120% 100% at 50% -10%, #3B2E48 0%, var(--bg-deep) 60%, #1D1624 100%);
+    color: var(--cream);
+    padding: 64px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 22px;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 6vw, 54px);
+    font-weight: 600;
+    line-height: 1.08;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  .hero p.lead {
+    font-size: 17px;
+    color: #D8CFE0;
+    max-width: 480px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .signature {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 40px;
+  }
+
+  /* ---------- Form ---------- */
+  .form-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 18px;
+    padding: 28px 24px;
+    max-width: 420px;
+    margin: 0 auto;
+    backdrop-filter: blur(6px);
+  }
+  .form-card .hs-form-frame { min-height: 120px; }
+  .form-card input[type="email"],
+  .form-card input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.08);
+    color: var(--cream);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 12px;
+  }
+  .form-card input::placeholder { color: #B4A9C0; }
+  .form-card label { color: #D8CFE0; font-size: 13px; display: block; margin-bottom: 6px; }
+  .form-card .hs-button {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    background: var(--rose);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .form-card .hs-error-msgs { color: #F0A0A0; font-size: 12px; list-style: none; margin-bottom: 8px; }
+  .form-card .hs-richtext { color: #D8CFE0; font-size: 12.5px; margin-bottom: 10px; }
+  .form-note {
+    font-size: 12px;
+    color: #B4A9C0;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+  .form-note a { text-decoration: underline; }
+
+  /* ---------- Sections ---------- */
+  section.content {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 88px 24px;
+  }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  section.content h2 {
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  section.content p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 520px;
+  }
+  section.content p + p { margin-top: 14px; }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .pillar {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 16px;
+  }
+  .pillar .glyph {
+    width: 30px; height: 30px;
+    margin-bottom: 12px;
+  }
+  .pillar h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .pillar p {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+
+  .myth {
+    background: var(--sage-soft);
+  }
+  .myth blockquote {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.5;
+    border-left: 3px solid var(--sage);
+    padding-left: 20px;
+    margin: 24px 0;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    padding: 80px 24px;
+  }
+  .final-cta h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  .final-cta .cta-link {
+    display: inline-block;
+    background: var(--rose);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px 40px;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  footer a { text-decoration: underline; }
+
+  @media (max-width: 560px) {
+    .pillars { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .signature img { animation: rise 1.2s ease-out; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Coming soon</p>
+
+    <div class="signature">
+      <img src="/logo.png" alt="Asena" style="width: 180px; max-width: 60%; height: auto; display: block; margin: 0 auto;" />
+    </div>
+
+    <h1 class="display">Wellness that moves<br/>with you, not against you</h1>
+    <p class="lead">
+      Asena is a wellness app built around how women's bodies actually change —
+      cycle to cycle, stage to stage. No one-size-fits-all plans. No paywalled
+      life stages. Just guidance that adapts to you.
+    </p>
+
+    <div class="form-card" id="waitlist-form">
+      <script src="https://js-eu1.hsforms.net/forms/embed/149108783.js" defer></script>
+      <div class="hs-form-frame" data-region="eu1" data-form-id="e9311687-54fc-42f3-b94d-450eac89d0a4" data-portal-id="149108783"></div>
+      <p class="form-note">
+        We'll only email you about Asena's launch. Unsubscribe anytime. See our
+        <a href="/privacy.html">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <p class="section-label">Why Asena</p>
+  <h2 class="display">Built on your biology, not a generic template</h2>
+  <p>
+    Most fitness and nutrition apps treat every body the same, and adjust
+    almost nothing for hormonal reality. Asena starts from the opposite
+    premise: your energy, appetite, and recovery shift throughout your
+    cycle and across life stages — so your plan should too.
+  </p>
+  <p>
+    Whether you're navigating a regular cycle, postpartum recovery,
+    perimenopause, or PCOS, Asena adjusts your training and nutrition
+    guidance around where you actually are — not a generic 28-day
+    assumption.
+  </p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <svg class="glyph" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 4 A11 11 0 0 1 15 26 A11 11 0 0 1 15 4" stroke="#8FA382" stroke-width="1.6"/>
+        <path d="M15 4 A11 11 0 0 1 15 26" stroke="#D88C9A" stroke-width="1.6"/>
+      </svg>
+      <h3>Cycle-aware</h3>
+      <p>Training and nutrition that shift with your phase, not against it.</p>
+    </div>
+    <div class="pillar">
+      <svg class="glyph" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 22 L12 12 L18 18 L24 6" stroke="#8FA382" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Doctor-informed</h3>
+      <p>Bring real checkup results in through simple, guided focus panels.</p>
+    </div>
+    <div class="pillar">
+      <svg class="glyph" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="15" r="6" stroke="#D88C9A" stroke-width="1.6"/>
+        <circle cx="20" cy="15" r="6" stroke="#8FA382" stroke-width="1.6"/>
+      </svg>
+      <h3>No paywalled stages</h3>
+      <p>Postpartum, perimenopause, and PCOS support — never behind a paywall.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content myth">
+  <p class="section-label">The name</p>
+  <h2 class="display">Asena, the she-wolf</h2>
+  <p>
+    In Turkic mythology, Asena is the she-wolf who guided and protected her
+    people through hardship, leading them somewhere they couldn't have
+    reached alone.
+  </p>
+  <blockquote>
+    "Strength that guides, not strength that demands."
+  </blockquote>
+  <p>
+    That's the role we want Asena to play in your routine — steady,
+    adaptive guidance through whatever stage you're in right now.
+  </p>
+</section>
+
+<section class="final-cta">
+  <h2>Be the first to know when Asena launches</h2>
+  <a href="#waitlist-form" class="cta-link">Join the waitlist ↑</a>
+</section>
+
+<footer>
+  © 2026 Asena · <a href="/privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
